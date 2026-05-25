@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { getLatestChapter } from "@/lib/db";
+import { getLatestChapter, getMangaById } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
 
@@ -13,6 +13,7 @@ export const metadata = {
 
 export default async function HomePage() {
   const latestChapter = getLatestChapter();
+  const manga = latestChapter ? getMangaById(latestChapter.mangaId) : null;
 
   return (
     <>
@@ -32,7 +33,7 @@ export default async function HomePage() {
             {latestChapter ? (
               <div className="relative w-full max-w-[480px] aspect-[3/4] bg-neutral-900 rounded border border-neutral-800 overflow-hidden group shadow-2xl">
                 <Image
-                  src="/uploads/covers/hero-cover.jpg"
+                  src={manga?.coverImage || "/images/torn/chapters/chapter1/ch1_cover.jpg"}
                   alt={`CH ${latestChapter.chapterNumber}: ${latestChapter.title ?? ""}`}
                   fill
                   className="object-cover group-hover:scale-105 transition duration-700"

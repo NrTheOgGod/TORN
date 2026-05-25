@@ -23,15 +23,32 @@ export interface Manga {
 
 // Sample data — replace with real DB queries when you connect a database
 const chapters: Chapter[] = [
-  // {
-  //   _id: "1",
-  //   mangaId: "manga-1",
-  //   chapterNumber: 1,
-  //   title: "The Beginning",
-  //   pages: ["/uploads/chapters/ch1/page1.jpg", "/uploads/chapters/ch1/page2.jpg"],
-  //   downloadUrl: "/uploads/downloads/ch1.zip",
-  //   releaseDate: new Date("2026-01-15"),
-  // },
+  {
+    _id: "1",
+    mangaId: "manga-1",
+    chapterNumber: 1,
+    title: "The Beginning",
+    pages: [
+      "/images/torn/chapters/chapter1/ch1_1.jpg",
+      "/images/torn/chapters/chapter1/ch1_2.jpg",
+      "/images/torn/chapters/chapter1/ch1_3.jpg",
+      "/images/torn/chapters/chapter1/ch1_4.jpg",
+    ],
+    downloadUrl: "/api/download/ch/1",
+    releaseDate: new Date("2026-01-15"),
+  },
+];
+
+const mangas: Manga[] = [
+  {
+    _id: "manga-1",
+    title: "TORN",
+    description: "An epic manga series",
+    coverImage: "/images/torn/chapters/chapter1/ch1_cover.jpg",
+    author: "Author Name",
+    artist: "Artist Name",
+    createdAt: new Date("2026-01-01"),
+  },
 ];
 
 export function getChapters(): Chapter[] {
@@ -47,4 +64,12 @@ export function getLatestChapter(): Chapter | null {
 
 export function getChapterByNumber(num: number): Chapter | null {
   return chapters.find((ch) => ch.chapterNumber === num) ?? null;
+}
+
+export function getMangas(): Manga[] {
+  return [...mangas];
+}
+
+export function getMangaById(id: string): Manga | null {
+  return mangas.find((m) => m._id === id) ?? null;
 }
