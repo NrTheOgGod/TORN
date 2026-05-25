@@ -1,4 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TORN
+
+Welcome YOU to the journey of **TORN**. The story of a struggling middle-aged man, set in a post-apocalyptic world where countless horrors await. Join him as he carves his way forward.
+
+We are just a bunch of unemployed artists who by the grace of God randomly met on Discord, and as our ideas collided, we decided to create something of our own. This is just the beginning—we have a lot to uncover. As time will see, join us in this creative journey.
+
+---
+
+## About Us
+
+We are a collaborative team of creative individuals brought together by fate and passion. Our diverse talents converge to bring the world of TORN to life:
+
+### Team Credits
+
+**Art Direction:**
+
+- Charan Ankam
+
+**Development & Technical:**
+
+- Norvin Rodrigues
+- Arthav Patil
+
+**Story & Narrative:**
+
+- Samarth Prmar
+- Prabuddha Singh
+- Jishnu Chowdhury
+
+---
 
 ## Getting Started
 

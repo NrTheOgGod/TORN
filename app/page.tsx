@@ -33,8 +33,13 @@ export default async function HomePage() {
             {latestChapter ? (
               <div className="relative w-full max-w-[480px] aspect-[3/4] bg-neutral-900 rounded border border-neutral-800 overflow-hidden group shadow-2xl">
                 <Image
-                  src={manga?.coverImage || "/images/torn/chapters/chapter1/ch1_cover.jpg"}
-                  alt={`CH ${latestChapter.chapterNumber}: ${latestChapter.title ?? ""}`}
+                  src={
+                    manga?.coverImage ||
+                    "/images/torn/chapters/chapter1/ch1_cover.jpg"
+                  }
+                  alt={`CH ${latestChapter.chapterNumber}: ${
+                    latestChapter.title ?? ""
+                  }`}
                   fill
                   className="object-cover group-hover:scale-105 transition duration-700"
                   priority
@@ -60,114 +65,92 @@ export default async function HomePage() {
         </div>
       </main>
 
-      {/* About Us Section */}
-      <section
-        id="about-us"
-        className="w-full border-t border-neutral-900 bg-[#0e0f11] py-20 px-6 scroll-mt-20"
-      >
-        <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-          <div className="lg:col-span-4 space-y-4 lg:sticky lg:top-24">
+{/* About Us Section */}
+<section
+  id="about-us"
+  className="w-full border-t border-neutral-900 bg-[#0e0f11] py-16 px-6 scroll-mt-20"
+>
+  <div className="w-full max-w-6xl mx-auto">
+    
+    {/* Master Dark Container (50% Opacity Background) */}
+    <div className="border border-neutral-900 bg-[#111214]/50 rounded-xl p-8 md:p-12 shadow-2xl backdrop-blur-sm">
+      
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+
+        {/* Left Side: Bios */}
+        <div className="lg:col-span-6 space-y-8">
+          
+          <div className="space-y-2">
             <h4 className="text-xs font-mono tracking-widest text-red-600 uppercase font-bold">
-              // WHO WE ARE
+              ABOUT OUR STORY
             </h4>
-            <h2 className="text-4xl md:text-5xl font-serif font-light text-white uppercase tracking-tight leading-tight">
-              BEHIND THE <br />
-              <span className="font-bold text-white">TORN</span> STORIES
-            </h2>
-            <p className="text-neutral-400 text-sm leading-relaxed pt-2">
-              We are an independent collective of artists, writers, and developer
-              enthusiasts dedicated to building a premium, raw digital comic
-              reading pipeline experience.
+            <p className="text-neutral-400 text-sm leading-relaxed">
+              We welcome you to the journey of <span className="text-neutral-200 font-medium">TORN</span>. 
+              The story of a struggling middle-aged man, set in a post-apocalyptic world where countless horrors await. 
+              Join him on his journey as he carves his way forward.
             </p>
           </div>
 
-          <div className="lg:col-span-8 space-y-12">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              <div className="border border-neutral-800 bg-[#111214]/50 p-6 rounded space-y-3">
-                <div className="w-8 h-8 rounded bg-red-600/10 flex items-center justify-center text-red-500">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-4 w-4"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
-                    />
-                  </svg>
-                </div>
-                <h3 className="text-base font-serif font-bold text-white tracking-wide">
-                  Original Narrative Craft
-                </h3>
-                <p className="text-xs text-neutral-500 leading-relaxed">
-                  Pushing creative boundaries to craft gripping universes, heavy
-                  ink styling, and sequential artwork across multi-chapter
-                  timelines.
-                </p>
-              </div>
-
-              <div className="border border-neutral-800 bg-[#111214]/50 p-6 rounded space-y-3">
-                <div className="w-8 h-8 rounded bg-red-600/10 flex items-center justify-center text-red-500">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-4 w-4"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 10V3L4 14h7v7l9-11h-7z"
-                    />
-                  </svg>
-                </div>
-                <h3 className="text-base font-serif font-bold text-white tracking-wide">
-                  High Performance Pipeline
-                </h3>
-                <p className="text-xs text-neutral-500 leading-relaxed">
-                  Engineered with asset lazy-loading parameters to ensure
-                  uninterrupted downward-strip scrolling with absolute peak
-                  performance optimization.
-                </p>
-              </div>
-            </div>
-
-            <div className="border-t border-neutral-900 pt-8 grid grid-cols-3 gap-4 text-center sm:text-left">
-              <div>
-                <p className="text-3xl md:text-4xl font-mono font-bold text-white tracking-tight">
-                  03
-                </p>
-                <p className="text-[10px] font-mono tracking-widest text-neutral-600 uppercase mt-1">
-                  Active Series
-                </p>
-              </div>
-              <div>
-                <p className="text-3xl md:text-4xl font-mono font-bold text-red-600 tracking-tight">
-                  25K+
-                </p>
-                <p className="text-[10px] font-mono tracking-widest text-neutral-600 uppercase mt-1">
-                  Monthly Readers
-                </p>
-              </div>
-              <div>
-                <p className="text-3xl md:text-4xl font-mono font-bold text-white tracking-tight">
-                  100%
-                </p>
-                <p className="text-[10px] font-mono tracking-widest text-neutral-600 uppercase mt-1">
-                  Creator Owned
-                </p>
-              </div>
-            </div>
+          <div className="space-y-2">
+            <h4 className="text-xs font-mono tracking-widest text-red-600 uppercase font-bold">
+              ABOUT OUR TEAM
+            </h4>
+            <p className="text-neutral-400 text-sm leading-relaxed">
+              We are just a bunch of unemployed artists who, by the grace of God, randomly met on Discord. 
+              As our ideas collided, we decided to create something of our own. This is just the beginning; 
+              we have a lot to uncover. As the story unfolds, join us in this creative journey.
+            </p>
           </div>
+          
         </div>
-      </section>
 
+        {/* Right Side: Roster */}
+        <div className="lg:col-span-6 space-y-6 lg:border-l lg:border-neutral-800/60 lg:pl-12">
+          
+          {/* Subdued Compact Title */}
+          <h3 className="text-xs font-mono font-bold text-neutral-400 uppercase tracking-[0.2em]">
+            MEET OUR TEAM
+          </h3>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
+            
+            {/* Art Column */}
+            <div className="space-y-3">
+              <div className="border-l border-red-600 pl-3">
+                <h4 className="text-xs font-mono font-bold text-red-500 tracking-widest uppercase">
+                  ART
+                </h4>
+              </div>
+              <div className="text-sm text-neutral-400 space-y-1.5 font-sans tracking-wide pl-3">
+                <p>Charan Ankam</p>
+                <p>Norvin Rodrigues</p>
+                <p>Arthav Patil</p>
+              </div>
+            </div>
+
+            {/* Story Column */}
+            <div className="space-y-3">
+              <div className="border-l border-red-600 pl-3">
+                <h4 className="text-xs font-mono font-bold text-red-500 tracking-widest uppercase">
+                  STORY
+                </h4>
+              </div>
+              <div className="text-sm text-neutral-400 space-y-1.5 font-sans tracking-wide pl-3">
+                <p>Samarth Parmar</p>
+                <p>Prabuddha Singh</p>
+                <p>Jishnu Chowdhury</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
       <Footer />
     </>
   );
