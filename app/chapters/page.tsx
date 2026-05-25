@@ -60,6 +60,7 @@ export default async function ChaptersPage() {
                     </Link>
                     {chapter.downloadUrl && (
                       <Link
+                      
                         href={`/download/ch/${chapter.chapterNumber}`}
                         className="p-2 bg-neutral-900 border border-neutral-800 rounded hover:bg-neutral-800 text-neutral-400 hover:text-white transition"
                         title="Download Zip File"
