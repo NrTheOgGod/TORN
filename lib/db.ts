@@ -8,6 +8,7 @@ export interface Chapter {
   title?: string;
   pages: string[];
   downloadUrl?: string;
+  pdfUrl?: string;
   releaseDate: Date;
 }
 
@@ -35,6 +36,7 @@ const chapters: Chapter[] = [
       "/images/torn/chapters/chapter1/ch1_4.jpg",
     ],
     downloadUrl: "/api/download/ch/1",
+    pdfUrl: "/uploads/pdfs/chapter-1.pdf",
     releaseDate: new Date("2026-01-15"),
   },
 ];

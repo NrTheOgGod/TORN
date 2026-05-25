@@ -78,6 +78,19 @@ export default async function ReaderPage({ params }: ReaderPageProps) {
           Support the creators by sharing the link or checking out our community
           pages.
         </p>
+        
+        {chapter.pdfUrl && (
+          <div className="mb-8 w-full flex justify-center">
+            <a
+              href={`/api/download/pdf/${chapter.chapterNumber}`}
+              download={`Chapter-${chapter.chapterNumber}.pdf`}
+              className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded text-sm font-bold tracking-widest transition uppercase"
+            >
+              Download PDF
+            </a>
+          </div>
+        )}
+        
         <div className="flex flex-col sm:flex-row gap-4">
           {chapter.chapterNumber > 1 && (
             <Link
