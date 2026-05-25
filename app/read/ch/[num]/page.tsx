@@ -44,16 +44,7 @@ export default async function ReaderPage({ params }: ReaderPageProps) {
             {chapter.title ? `- ${chapter.title}` : ""}
           </span>
         </h2>
-        {chapter.downloadUrl ? (
-          <Link
-            href={`/download/ch/${chapter.chapterNumber}`}
-            className="text-xs bg-red-600 px-4 py-2 rounded font-bold tracking-wider hover:bg-red-700 transition uppercase shadow-md text-white"
-          >
-            Download ZIP
-          </Link>
-        ) : (
-          <div className="w-20" />
-        )}
+        <div className="w-20" />
       </div>
 
       {/* Page images */}
@@ -88,20 +79,26 @@ export default async function ReaderPage({ params }: ReaderPageProps) {
           pages.
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
+          {chapter.chapterNumber > 1 && (
+            <Link
+              href={`/read/ch/${chapter.chapterNumber - 1}`}
+              className="bg-neutral-900 border border-neutral-700 text-white px-8 py-3 rounded text-sm font-bold tracking-widest hover:bg-neutral-800 transition uppercase"
+            >
+              ← Previous Chapter
+            </Link>
+          )}
           <Link
             href="/chapters"
             className="bg-white text-black px-8 py-3 rounded text-sm font-bold tracking-widest hover:bg-neutral-200 transition uppercase"
           >
             Chapter Directory
           </Link>
-          {chapter.downloadUrl && (
-            <Link
-              href={`/download/ch/${chapter.chapterNumber}`}
-              className="bg-neutral-900 border border-neutral-800 text-neutral-300 px-8 py-3 rounded text-sm font-bold tracking-widest hover:bg-neutral-800 transition uppercase"
-            >
-              Download Offline Copy
-            </Link>
-          )}
+          <Link
+            href={`/read/ch/${chapter.chapterNumber + 1}`}
+            className="bg-neutral-900 border border-neutral-700 text-white px-8 py-3 rounded text-sm font-bold tracking-widest hover:bg-neutral-800 transition uppercase"
+          >
+            Next Chapter →
+          </Link>
         </div>
       </section>
     </>
