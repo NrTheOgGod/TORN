@@ -44,7 +44,28 @@ export default async function ReaderPage({ params }: ReaderPageProps) {
             {chapter.title ? `- ${chapter.title}` : ""}
           </span>
         </h2>
-        <div className="w-20" />
+        {chapter.downloadUrl && (
+          <Link
+            href={`/download/ch/${chapter.chapterNumber}`}
+            className="p-2 bg-neutral-900 border border-neutral-800 rounded hover:bg-neutral-800 text-neutral-400 hover:text-white transition"
+            title="Download Zip File"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+              />
+            </svg>
+          </Link>
+        )}
       </div>
 
       {/* Page images */}
@@ -78,6 +99,18 @@ export default async function ReaderPage({ params }: ReaderPageProps) {
           Support the creators by sharing the link or checking out our community
           pages.
         </p>
+        
+        {chapter.pdfUrl && (
+          <div className="mb-8 w-full flex justify-center">
+            <a
+              href={`/api/download/pdf/${chapter.chapterNumber}`}
+              download={`Chapter-${chapter.chapterNumber}.pdf`}
+              className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded text-sm font-bold tracking-widest transition uppercase"
+            >
+              Download PDF
+            </a>
+          </div>
+        )}
         
         <div className="flex flex-col sm:flex-row gap-4">
           {chapter.chapterNumber > 1 && (
