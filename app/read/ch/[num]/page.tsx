@@ -39,22 +39,25 @@ export default async function ReaderPage({
   return (
     <>
       {/* Sticky Reader Toolbar */}
-      <div className="sticky top-0 z-50 w-full bg-[#111214]/90 backdrop-blur-md border-b border-neutral-900 px-6 py-4 flex justify-between items-center shadow-lg">
+      <div className="sticky top-0 z-50 w-full bg-[#111214]/90 backdrop-blur-md border-b border-neutral-900 px-3 sm:px-6 py-2 sm:py-4 flex justify-between items-center gap-2 sm:gap-4 shadow-lg">
 
         {/* Back */}
         <Link
           href="/chapters"
-          className="text-xs font-bold uppercase tracking-widest text-neutral-400 hover:text-white transition flex items-center gap-2"
+          className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-neutral-400 hover:text-white transition flex items-center gap-1 sm:gap-2 whitespace-nowrap flex-shrink-0"
         >
-          ← Back to Chapters
+          <span className="hidden sm:inline">← Back to Chapters</span>
+          <span className="sm:hidden">← Back</span>
         </Link>
 
         {/* Title */}
-        <h2 className="text-xs font-mono tracking-widest uppercase text-neutral-400">
-          READING:
-          <span className="text-white font-sans font-bold ml-2">
-            CHAPTER {chapter.chapterNumber}
-            {chapter.title ? ` - ${chapter.title}` : ""}
+        <h2 className="text-[9px] sm:text-xs font-mono tracking-widest uppercase text-neutral-400 flex-1 text-center truncate px-1">
+          <span className="hidden sm:inline">READING: </span>
+          <span className="text-white font-sans font-bold">
+            CH {chapter.chapterNumber}
+            <span className="hidden md:inline">
+              {chapter.title ? ` - ${chapter.title}` : ""}
+            </span>
           </span>
         </h2>
 
@@ -67,7 +70,7 @@ export default async function ReaderPage({
             aria-label="Download PDF"
             className="
               flex items-center justify-center
-              w-10 h-10
+              w-8 h-8 sm:w-10 sm:h-10
               rounded-full
               bg-white/10
               text-white/50
@@ -75,6 +78,7 @@ export default async function ReaderPage({
               hover:text-white
               transition
               backdrop-blur-sm
+              flex-shrink-0
             "
           >
             <svg
@@ -83,7 +87,7 @@ export default async function ReaderPage({
               viewBox="0 0 24 24"
               stroke="currentColor"
               strokeWidth={2}
-              className="w-5 h-5"
+              className="w-4 h-4 sm:w-5 sm:h-5"
             >
               <path
                 strokeLinecap="round"
@@ -93,7 +97,7 @@ export default async function ReaderPage({
             </svg>
           </a>
         ) : (
-          <div className="w-10 h-10" />
+          <div className="w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0" />
         )}
       </div>
 
