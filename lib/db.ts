@@ -34,6 +34,10 @@ const chapters: Chapter[] = [
       "/images/torn/chapters/chapter1/ch1_2.jpg",
       "/images/torn/chapters/chapter1/ch1_3.jpg",
       "/images/torn/chapters/chapter1/ch1_4.jpg",
+      "/images/torn/chapters/chapter1/ch1_5.jpg",
+      "/images/torn/chapters/chapter1/ch1_6.jpg",
+      "/images/torn/chapters/chapter1/ch1_7.jpg",
+      "/images/torn/chapters/chapter1/ch1_8.jpg"
     ],
     downloadUrl: "/api/download/ch/1",
     pdfUrl: "/uploads/pdfs/chapter-1.pdf",
